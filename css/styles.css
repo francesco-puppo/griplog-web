@@ -37,6 +37,8 @@ body {
     background-repeat: no-repeat;
     position: relative;
     padding: 2rem;
+    padding-top: max(2rem, env(safe-area-inset-top, 0));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
 }
 
 .hero::before {
@@ -317,6 +319,8 @@ body {
     .hero {
         min-height: 100svh;
         padding: 1.5rem;
+        padding-top: max(1.5rem, env(safe-area-inset-top, 0));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0));
     }
 
     .app-icon {

@@ -49,7 +49,34 @@
                 <!-- <span class="word">your</span> -->
                 <!-- <span class="word">routes</span> -->
             </h1>
-            <p class="hero-subtitle">
+            <p class="pill">
+                Your climbing journal
+            </p>
+
+            <!-- Email Form -->
+            <div class="newsletter-form-container">
+                <form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cmj5p0ogv0cij0iwkecvznw1v" method="POST">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email Address"
+                        class="newsletter-form-input"
+                        required
+                        aria-label="Email address"
+                    >
+                    <button type="submit" class="newsletter-form-button">Get Notified</button>
+                    <button type="button" class="newsletter-loading-button" style="display: none;">Please wait...</button>
+                </form>
+                <div class="newsletter-success" style="display: none;">
+                    <p>Thanks! We'll be in touch!</p>
+                </div>
+                <div class="newsletter-error" style="display: none;">
+                    <p>Oops! Something went wrong, please try again</p>
+                </div>
+                <button class="newsletter-back-button" type="button" style="display: none;">&larr; Back</button>
+            </div>
+
+            <!-- <p class="hero-subtitle">
                 <span class="word">Subscribe</span>
                 <span class="word">to</span>
                 <span class="word">be</span>
@@ -64,29 +91,7 @@
                 <span class="word">to</span>
                 <span class="word">the</span>
                 <span class="word">app.</span>
-            </p>
-            <!-- Email Form -->
-            <div class="newsletter-form-container">
-                <form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cmj5p0ogv0cij0iwkecvznw1v" method="POST">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email Address"
-                        class="newsletter-form-input"
-                        required
-                        aria-label="Email address"
-                    >
-                    <button type="submit" class="newsletter-form-button">Subscribe</button>
-                    <button type="button" class="newsletter-loading-button" style="display: none;">Please wait...</button>
-                </form>
-                <div class="newsletter-success" style="display: none;">
-                    <p>Thanks! We'll be in touch!</p>
-                </div>
-                <div class="newsletter-error" style="display: none;">
-                    <p>Oops! Something went wrong, please try again</p>
-                </div>
-                <button class="newsletter-back-button" type="button" style="display: none;">&larr; Back</button>
-            </div>
+            </p> -->
         </div>
     </section>
 

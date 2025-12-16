@@ -60,6 +60,21 @@ body {
     width: 100%;
 }
 
+.pill {
+    display: inline-block;
+    width: auto;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+    color: #d3d7cb;
+    border-radius: 999px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeInUp 1s ease-out;
+    margin-bottom: 2rem ;
+}
+
 .app-icon {
     width: 110px;
     height: 110px;

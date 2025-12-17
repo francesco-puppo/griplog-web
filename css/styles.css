@@ -125,7 +125,7 @@ body {
     display: inline-block;
 } */
 
-.hero-title .underline::before {
+.underline::before {
     content: "";
     position: absolute;
     left: 0;
@@ -268,7 +268,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
 }
 

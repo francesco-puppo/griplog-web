@@ -43,18 +43,35 @@ body {
 
 /* Hero Section */
 .hero {
-	min-height: auto;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: none;
+	background-image: url("../images/hero-bg-02.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	position: relative;
-	padding: 4rem 2rem 2rem;
-	padding-top: max(4rem, env(safe-area-inset-top, 0));
+	padding: 2rem;
+	padding-top: max(2rem, env(safe-area-inset-top, 0));
+	padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
+	border-radius: 2rem;
+}
+
+.hero::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to bottom, #0a0a0a30, #0a0a0a);
+	z-index: 1;
 }
 
 .hero-content {
 	position: relative;
+	z-index: 2;
 	text-align: center;
 	max-width: 800px;
 	width: 100%;
@@ -121,8 +138,8 @@ body {
 }
 
 /* .hero-title .underline {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 } */
 
 .underline::before {
@@ -367,10 +384,6 @@ hr::before {
 	color: var(--color-text-primary);
 }
 
-body.changelog .hero {
-	height: 50vh;
-}
-
 /* Animations */
 @keyframes fadeInDown {
 	from {
@@ -459,6 +472,10 @@ body.changelog .hero {
 	text-align: center;
 }
 
+.changelog-nav:hover {
+	cursor: pointer;
+}
+
 .back-link {
 	display: inline-block;
 	color: var(--color-text-secondary);
@@ -472,6 +489,23 @@ body.changelog .hero {
 .back-link:hover {
 	color: var(--color-text-primary);
 	background-color: rgba(255, 255, 255, 0.05);
+	cursor: pointer;
+}
+
+.changelog .hero {
+	min-height: 40vh;
+	background-image: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.changelog .hero .hero-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .changelog-entries {
@@ -508,6 +542,7 @@ body.changelog .hero {
 	font-weight: 800;
 	color: var(--color-text-primary);
 	margin-bottom: 0.25rem;
+	margin-top: -1rem;
 	letter-spacing: -0.01em;
 }
 
@@ -515,6 +550,7 @@ body.changelog .hero {
 	font-size: 0.95rem;
 	color: var(--color-text-secondary);
 	opacity: 0.7;
+	display: none;
 }
 
 .changelog-content h3 {

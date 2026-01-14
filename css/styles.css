@@ -43,35 +43,18 @@ body {
 
 /* Hero Section */
 .hero {
-	min-height: 100vh;
+	min-height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../images/hero-bg-02.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	background: none;
 	position: relative;
-	padding: 2rem;
-	padding-top: max(2rem, env(safe-area-inset-top, 0));
-	padding-bottom: max(2rem, env(safe-area-inset-bottom, 0));
-	border-radius: 2rem;
-}
-
-.hero::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: linear-gradient(to bottom, #0a0a0a30, #0a0a0a);
-	z-index: 1;
+	padding: 4rem 2rem 2rem;
+	padding-top: max(4rem, env(safe-area-inset-top, 0));
 }
 
 .hero-content {
 	position: relative;
-	z-index: 2;
 	text-align: center;
 	max-width: 800px;
 	width: 100%;
@@ -414,24 +397,12 @@ body.changelog .hero {
 /* Responsive Design */
 @media (max-width: 768px) {
 	.hero {
-		min-height: 100svh;
-		padding: 1.5rem;
-		padding-top: max(1.5rem, env(safe-area-inset-top, 0));
-		padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0));
-	}
-
-	.app-icon {
-		width: 90px;
-		height: 90px;
-		margin-bottom: 1.5rem;
+		padding: 3rem 1.5rem 1.5rem;
+		padding-top: max(3rem, env(safe-area-inset-top, 0));
 	}
 
 	.hero-title {
 		margin-bottom: 1rem;
-	}
-
-	.hero-subtitle {
-		margin-bottom: 2rem;
 	}
 
 	.newsletter-form {

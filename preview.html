@@ -780,7 +780,7 @@
 					const mapsButton = document.createElement("a");
 					mapsButton.href = `http://maps.apple.com/?ll=${data.lat},${data.lon}&q=${encodeURIComponent(data.name)}`;
 					mapsButton.className = "secondary-button";
-					mapsButton.textContent = "Open in Maps";
+					mapsButton.textContent = "Open in Apple Maps";
 					mapsButton.target = "_blank";
 					actionsContainer.insertBefore(mapsButton, actionsContainer.children[1]);
 				}

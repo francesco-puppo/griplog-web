@@ -462,17 +462,17 @@ hr::before {
 	}
 }
 
-/* Changelog Styles */
-.changelog-container {
+/* Roadmap Styles */
+.roadmap-container {
 	max-width: 700px;
 }
 
-.changelog-nav {
+.roadmap-nav {
 	margin-bottom: 3rem;
 	text-align: center;
 }
 
-.changelog-nav:hover {
+.roadmap-nav:hover {
 	cursor: pointer;
 }
 
@@ -492,7 +492,7 @@ hr::before {
 	cursor: pointer;
 }
 
-.changelog .hero {
+.roadmap .hero {
 	min-height: 40vh;
 	background-image: none;
 	display: flex;
@@ -502,26 +502,26 @@ hr::before {
 	padding-top: 5rem;
 }
 
-.changelog .hero .hero-content {
+.roadmap .hero .hero-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
-.changelog-entries {
+.roadmap-entries {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
 }
 
-.changelog-entry {
+.roadmap-entry {
 	border-left: 2px solid rgba(255, 255, 255, 0.1);
 	padding-left: 2rem;
 	position: relative;
 }
 
-.changelog-entry::before {
+.roadmap-entry::before {
 	content: "";
 	position: absolute;
 	left: -6px;
@@ -533,11 +533,11 @@ hr::before {
 	box-shadow: 0 0 0 4px var(--color-bg-content);
 }
 
-.changelog-header {
+.roadmap-header {
 	margin-bottom: 1.5rem;
 }
 
-.changelog-version {
+.roadmap-version {
 	font-family: "CabinetGrotesk-Variable";
 	font-size: clamp(1.8rem, 3vw, 2.2rem);
 	font-weight: 800;
@@ -547,14 +547,14 @@ hr::before {
 	letter-spacing: -0.01em;
 }
 
-.changelog-date {
+.roadmap-date {
 	font-size: 0.95rem;
 	color: var(--color-text-secondary);
 	opacity: 0.7;
 	display: none;
 }
 
-.changelog-content h3 {
+.roadmap-content h3 {
 	font-family: "CabinetGrotesk-Variable";
 	font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 	font-weight: 700;
@@ -563,13 +563,13 @@ hr::before {
 	letter-spacing: -0.01em;
 }
 
-.changelog-list {
+.roadmap-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.changelog-list li {
+.roadmap-list li {
 	font-size: clamp(1rem, 2vw, 1.1rem);
 	color: var(--color-text-secondary);
 	line-height: 1.7;
@@ -578,7 +578,7 @@ hr::before {
 	position: relative;
 }
 
-.changelog-list li::before {
+.roadmap-list li::before {
 	content: "→";
 	position: absolute;
 	left: 0;
@@ -586,7 +586,7 @@ hr::before {
 	font-weight: bold;
 }
 
-.changelog-list li:last-child {
+.roadmap-list li:last-child {
 	margin-bottom: 0;
 }
 

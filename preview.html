@@ -226,6 +226,54 @@
             border-radius: 6px;
         }
 
+        .map-preview {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .map-preview:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.2s ease;
+        }
+
+        .map-preview:hover img {
+            opacity: 0.9;
+        }
+
+        .map-preview::after {
+            content: 'Click to open in OpenStreetMap';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .map-preview:hover::after {
+            opacity: 1;
+        }
+
         .error-state {
             text-align: center;
             padding: 3rem 2rem;
@@ -474,6 +522,11 @@
             const detailsContainer = document.getElementById('route-details');
             detailsContainer.innerHTML = '';
 
+            // Add map preview if GPS coordinates are available
+            if (data.lat && data.lon) {
+                addMapPreview(data.lat, data.lon, detailsContainer);
+            }
+
             if (data.location) {
                 addDetail('Location', data.location);
             }
@@ -555,6 +608,32 @@
             return angleMap[angle.toLowerCase()] || angle;
         }
 
+        function addMapPreview(lat, lon, container) {
+            const mapDiv = document.createElement('div');
+            mapDiv.className = 'map-preview';
+
+            // Use OpenStreetMap static map (no API key required)
+            // Format: https://staticmap.openstreetmap.de/staticmap.php?center=LAT,LON&zoom=ZOOM&size=WIDTHxHEIGHT&maptype=mapnik&markers=LAT,LON,red-pushpin
+            const zoom = 13; // Good zoom level for climbing locations
+            const width = 600;
+            const height = 200;
+            const mapUrl = `https://staticmap.openstreetmap.de/staticmap.php?center=${lat},${lon}&zoom=${zoom}&size=${width}x${height}&maptype=mapnik&markers=${lat},${lon},red-pushpin`;
+
+            const img = document.createElement('img');
+            img.src = mapUrl;
+            img.alt = 'Map location';
+            img.loading = 'lazy';
+
+            // Add click handler to open full map
+            mapDiv.style.cursor = 'pointer';
+            mapDiv.addEventListener('click', function() {
+                window.open(`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=15/${lat}/${lon}`, '_blank');
+            });
+
+            mapDiv.appendChild(img);
+            container.appendChild(mapDiv);
+        }
+
         function showError() {
             loadingState.style.display = 'none';
             errorState.style.display = 'block';
@@ -596,6 +675,11 @@
             // Build details list
             const detailsContainer = document.getElementById('route-details');
             detailsContainer.innerHTML = '';
+
+            // Add map preview if GPS coordinates are available
+            if (data.lat && data.lon) {
+                addMapPreview(data.lat, data.lon, detailsContainer);
+            }
 
             if (data.country) {
                 addDetail('Country', data.country);
